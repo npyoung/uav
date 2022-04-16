@@ -1,0 +1,11 @@
+[Unit]
+Description=hologram
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/hologram network connect
+
+[Install]
+WantedBy=multi-user.target
