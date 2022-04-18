@@ -1,6 +1,7 @@
 [Unit]
 Description=hologram
 After=network-online.target
+After=sys-subsystem-net-devices-ppp0.device
 
 [Service]
 Type=oneshot
