@@ -1,12 +1,11 @@
 [Unit]
 Description=hologram
-After=network-online.target
-After=sys-subsystem-net-devices-ppp0.device
+After=network-online.target sys-subsystem-net-devices-ppp.device
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
-ExecStart=/usr/local/bin/hologram network connect
+RemainAfterExit=true
+ExecStart=/usr/bin/python3 /home/pi/uav/scripts/hologram_connect.py
 
 [Install]
 WantedBy=multi-user.target
